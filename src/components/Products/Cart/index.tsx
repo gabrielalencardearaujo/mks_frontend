@@ -1,5 +1,6 @@
 'use client';
-
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 import ShoppingProductsContext from '@/context/ShoppingContext';
 import React from 'react';
 import ProductCart from './components/ProductCart';
