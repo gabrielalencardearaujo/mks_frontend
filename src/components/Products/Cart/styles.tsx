@@ -25,6 +25,7 @@ export const FormCart = styled.form`
 export const ContentProd = styled.div`
   display: flex;
   align-items: start;
+  min-height: 200px;
   max-height: 100%;
   overflow: auto;
   overflow-x: hidden;
@@ -96,4 +97,10 @@ export const BtnPurchase = styled.button`
 export const TitleCartContainer = styled.h2`
   max-width: 180px;
   font-size: 27px;
+`;
+
+export const MessageErrors = styled.div`
+  align-self: center;
+  font-size: 20px;
+  color: rgb(255 255 255 / 0.5);
 `;

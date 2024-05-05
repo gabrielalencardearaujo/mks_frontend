@@ -12,6 +12,7 @@ import {
   ContentProd,
   FormCart,
   HeadeCartModal,
+  MessageErrors,
   TitleCartContainer,
   TotalPriceCart,
 } from './styles';
@@ -58,14 +59,18 @@ function CartContainer() {
       </HeadeCartModal>
       <FormCart action={handleSubmit}>
         <ContentProd>
-          {filteredCart.length > 0
-            ? filteredCart.map((prod) => <ProductCart key={prod.id} product={prod} count={count} />)
-            : ''}
+          {cartProducts.length > 0 ? (
+            filteredCart.map((prod) => <ProductCart key={prod.id} product={prod} count={count} />)
+          ) : (
+            <MessageErrors>Carrinho está vazio</MessageErrors>
+          )}
         </ContentProd>
-        <TotalPriceCart>
-          <p>Total:</p>
-          <p>R${cartProducts.reduce((acc, prod) => acc + +prod.price, 0)}</p>
-        </TotalPriceCart>
+        {cartProducts.length > 0 && (
+          <TotalPriceCart>
+            <p>Total:</p>
+            <p>R${cartProducts.reduce((acc, prod) => acc + +prod.price, 0)}</p>
+          </TotalPriceCart>
+        )}
         <BtnPurchase>Finalizar Compra</BtnPurchase>
       </FormCart>
     </Container>
